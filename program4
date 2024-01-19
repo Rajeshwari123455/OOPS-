@@ -1,0 +1,34 @@
+4
+
+
+import the abc module to create the abstract base class.create the car class that inherits the abc class and defined an abstract method named mileage().inherit the base class from the three diffrent subclasses and implment the abstract method differently.create the objects to call abstarct method
+
+
+
+from abc import ABC, abstractmethod
+
+class Vehicle(ABC):
+    @abstractmethod
+    def mileage(self):
+        pass
+
+class Sedan(Vehicle):
+    def mileage(self):
+        return 25
+
+class SUV(Vehicle):
+    def mileage(self):
+        return 18
+
+class Truck(Vehicle):
+    def mileage(self):
+        return 12
+sedan = Sedan()
+suv = SUV()
+truck = Truck()
+
+print("Mileage of Sedan:", sedan.mileage())
+print("Mileage of SUV:", suv.mileage())
+print("Mileage of Truck:", truck.mileage())
+
+
